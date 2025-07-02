@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goran Radmilović - Fitnes Trener i Mentor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo h2 {
+    color: #e74c3c;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #e74c3c;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    padding-top: 70px;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-content {
+    color: white;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: #e74c3c;
+    color: white;
+    border-color: #e74c3c;
+}
+
+.btn-primary:hover {
+    background: #c0392b;
+    border-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #667eea;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.btn-outline:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+/* About Section */
+.about {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.about-text h4 {
+    font-size: 1.2rem;
+    color: #e74c3c;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.credential {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.credential i {
+    color: #e74c3c;
+    font-size: 1.2rem;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats Section */
+.stats {
+    padding: 80px 0;
+    background: #2c3e50;
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 2rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Transformations Section */
+.transformations {
+    padding: 100px 0;
+    background: white;
+}
+
+.transformations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.transformation-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.transformation-card:hover {
+    transform: translateY(-10px);
+}
+
+.transformation-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.transformation-content {
+    padding: 2rem;
+}
+
+.transformation-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.transformation-content p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.transformation-stats {
+    display: flex;
+    gap: 1rem;
+}
+
+.transformation-stats span {
+    background: #e74c3c;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Mentorship Section */
+.mentorship {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.mentorship-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.mentorship-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.mentorship-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.card-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.mentorship-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.mentorship-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Pricing Section */
+.pricing {
+    padding: 100px 0;
+    background: white;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: white;
+    border: 2px solid #ecf0f1;
+    border-radius: 15px;
+    padding: 2.5rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+    border-color: #e74c3c;
+    transform: translateY(-5px);
+}
+
+.pricing-card.featured {
+    border-color: #e74c3c;
+    transform: scale(1.05);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e74c3c;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.pricing-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-bottom: 0.5rem;
+}
+
+.duration {
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.pricing-features li {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pricing-features i {
+    color: #27ae60;
+}
+
+/* Contact Section */
+.contact {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.contact-form {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #e74c3c;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #e74c3c;
+    width: 40px;
+    text-align: center;
+}
+
+.contact-item h4 {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #2c3e50;
+}
+
+.contact-item p {
+    color: #555;
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: #c0392b;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+.footer {
+    background: #2c3e50;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: #e74c3c;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #e74c3c;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #34495e;
+    color: #bdc3c7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .transformations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mentorship-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card.featured {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form {
+        padding: 2rem;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Form Validation Styles */
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: #e74c3c;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.success-message {
+    background: #27ae60;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Goran Radmilović</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Početna</a></li>
+                <li><a href="#about">O meni</a></li>
+                <li><a href="#transformations">Transformacije</a></li>
+                <li><a href="#mentorship">Mentorstvo</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Transformišite Svoje Telo i Život</h1>
+                <p class="hero-subtitle">Personalizovani fitnes coaching koji donosi rezultate. Više od 500 uspešnih transformacija.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Počni Transformaciju</a>
+                    <a href="#transformations" class="btn btn-secondary">Pogledaj Rezultate</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="goran-photo.png" alt="Goran Radmilović">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>O Meni</h2>
+                <p>Vaš partner u transformaciji</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Goran Radmilović</h3>
+                    <h4>Sertifikovani Fitnes Trener i Mentor</h4>
+                    <p>Sa više od 10 godina iskustva u transformaciji tela i života svojih klijenata, specijalizovan sam za bodybuilding, snaženje i personalni trening. Kroz godine rada, razvio sam jedinstvenu metodologiju koja kombinuje naučno zasnovane principe treninga sa individualnim pristupom svakom klijentu.</p>
+                    <p>Moja strast prema fitnešu počela je u ranoj mladosti, a kroz godine sam usavršavao svoje veštine kroz kontinuirano obrazovanje i rad sa stotinama klijenata. Verujem da je transformacija tela samo početak - pravi cilj je transformacija uma i životnih navika.</p>
+                    <div class="credentials">
+                        <div class="credential">
+                            <i class="fas fa-certificate"></i>
+                            <span>Sertifikovani Personal Trener</span>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-trophy"></i>
+                            <span>Bodybuilding Competitor</span>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Nutritivni Savetnik</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="personal-training.jpg" alt="Personal Training Session">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Uspešnih Transformacija</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Klijenata Postiže Ciljeve</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Godina Iskustva</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Podrška</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformations Section -->
+    <section id="transformations" class="transformations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Transformacije Polaznika</h2>
+                <p>Rezultati koji govore sami za sebe</p>
+            </div>
+            <div class="transformations-grid">
+                <div class="transformation-card">
+                    <img src="transformation1.jpg" alt="Transformacija 1">
+                    <div class="transformation-content">
+                        <h3>Marko S.</h3>
+                        <p>"Goran mi je promenio život. Nisam samo smršao 25kg za 6 meseci, već sam stekao samopouzdanje i disciplinu koja mi pomaže u svim aspektima života."</p>
+                        <div class="transformation-stats">
+                            <span>-25kg</span>
+                            <span>6 meseci</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="transformation-card">
+                    <img src="transformation2.jpg" alt="Transformacija 2">
+                    <div class="transformation-content">
+                        <h3>Ana M.</h3>
+                        <p>"Kao žena, bojala sam se da ću postati 'previše mišićava'. Goran mi je pokazao kako da izgradim snažno, ženstveno telo i povećam mišićnu masu za 8kg."</p>
+                        <div class="transformation-stats">
+                            <span>+8kg mišića</span>
+                            <span>4 meseca</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="transformation-card">
+                    <img src="transformation3.jpg" alt="Transformacija 3">
+                    <div class="transformation-content">
+                        <h3>Stefan P.</h3>
+                        <p>"Zahvaljujući Goranovom mentorstvu, osvojio sam treće mesto na svom prvom bodybuilding takmičenju. Neverovatna transformacija za 8 meseci."</p>
+                        <div class="transformation-stats">
+                            <span>3. mesto</span>
+                            <span>8 meseci</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentorship Section -->
+    <section id="mentorship" class="mentorship">
+        <div class="container">
+            <div class="section-header">
+                <h2>Šta Dobijate u Mentorstvu</h2>
+                <p>Kompletna podrška na vašem putovanju transformacije</p>
+            </div>
+            <div class="mentorship-grid">
+                <div class="mentorship-card">
+                    <div class="card-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Personalizovani Plan Treninga</h3>
+                    <p>Svaki program je kreiran specifično za vaše ciljeve, fizičke mogućnosti i životni stil. Nema univerzalnih rešenja - samo individualni pristup.</p>
+                </div>
+                <div class="mentorship-card">
+                    <div class="card-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3>Nutritivni Plan</h3>
+                    <p>Detaljno planiranje ishrane prilagođeno vašim preferencijama i ciljevima. Učićete kako da se hranite za život, a ne samo za kratkoročne rezultate.</p>
+                </div>
+                <div class="mentorship-card">
+                    <div class="card-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>24/7 Podrška</h3>
+                    <p>Direktan pristup Goranu putem WhatsApp grupe za sva pitanja i nedoumice. Nikad niste sami na ovom putovanju.</p>
+                </div>
+                <div class="mentorship-card">
+                    <div class="card-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Nedeljni Check-in Pozivi</h3>
+                    <p>Redovni video pozivi za praćenje napretka, prilagođavanje programa i motivaciju.</p>
+                </div>
+                <div class="mentorship-card">
+                    <div class="card-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <h3>Ekskluzivni Materijali</h3>
+                    <p>Video biblioteka sa demonstracijama vežbi, recepti, i edukativni sadržaj o fitnešu i ishrani.</p>
+                </div>
+                <div class="mentorship-card">
+                    <div class="card-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Mentalna Podrška</h3>
+                    <p>Rad na mentalnom aspektu transformacije - izgradnja discipline, motivacije i pozitivnih navika.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Paketi Mentorstva</h2>
+                <p>Izaberite paket koji odgovara vašim potrebama</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Osnovni Paket</h3>
+                        <div class="price">299€</div>
+                        <div class="duration">3 meseca</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Personalizovani plan treninga</li>
+                        <li><i class="fas fa-check"></i> Nutritivni plan</li>
+                        <li><i class="fas fa-check"></i> Mesečni check-in pozivi</li>
+                        <li><i class="fas fa-check"></i> WhatsApp podrška</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Izaberi Paket</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Najpopularniji</div>
+                    <div class="pricing-header">
+                        <h3>Premium Paket</h3>
+                        <div class="price">499€</div>
+                        <div class="duration">6 meseci</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Sve iz osnovnog paketa</li>
+                        <li><i class="fas fa-check"></i> Nedeljni check-in pozivi</li>
+                        <li><i class="fas fa-check"></i> Pristup video biblioteci</li>
+                        <li><i class="fas fa-check"></i> Dodatni nutritivni planovi</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Izaberi Paket</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>VIP Paket</h3>
+                        <div class="price">799€</div>
+                        <div class="duration">12 meseci</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Sve iz premium paketa</li>
+                        <li><i class="fas fa-check"></i> Bi-nedeljni pozivi</li>
+                        <li><i class="fas fa-check"></i> Personalni trening sesije (online)</li>
+                        <li><i class="fas fa-check"></i> Prioritetna podrška</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Izaberi Paket</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Počnite Svoju Transformaciju</h2>
+                <p>Popunite formu i kontaktiraću vas u roku od 24 sata</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="coaching-form">
+                        <div class="form-group">
+                            <label for="name">Ime i Prezime *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Godine</label>
+                            <input type="number" id="age" name="age" min="16" max="80">
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Iskustvo sa treningom</label>
+                            <select id="experience" name="experience">
+                                <option value="">Izaberite...</option>
+                                <option value="beginner">Početnik</option>
+                                <option value="intermediate">Srednji nivo</option>
+                                <option value="advanced">Napredni</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="goals">Vaši ciljevi *</label>
+                            <textarea id="goals" name="goals" rows="4" placeholder="Opišite šta želite da postignete..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="package">Željeni paket</label>
+                            <select id="package" name="package">
+                                <option value="">Izaberite paket...</option>
+                                <option value="basic">Osnovni Paket (3 meseca - 299€)</option>
+                                <option value="premium">Premium Paket (6 meseci - 499€)</option>
+                                <option value="vip">VIP Paket (12 meseci - 799€)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Pošaljite Prijavu</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>goran.radmilovic@fitness.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefon</h4>
+                            <p>+381 60 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Lokacija</h4>
+                            <p>Beograd, Srbija</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Goran Radmilović</h4>
+                    <p>Vaš partner za transformaciju tela i uma. Postignite svoje fitnes ciljeve uz personalizovano mentorstvo.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Brzi Linkovi</h4>
+                    <ul>
+                        <li><a href="#home">Početna</a></li>
+                        <li><a href="#about">O meni</a></li>
+                        <li><a href="#transformations">Transformacije</a></li>
+                        <li><a href="#mentorship">Mentorstvo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>Email: goran.radmilovic@fitness.com</p>
+                    <p>Telefon: +381 60 123 4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Goran Radmilović. Sva prava zadržana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Navbar background change on scroll
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+    } else {
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.boxShadow = 'none';
+    }
+});
+
+// Animate elements on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-up');
+        }
+    });
+}, observerOptions);
+
+// Observe elements for animation
+document.querySelectorAll('.transformation-card, .mentorship-card, .pricing-card, .stat-item').forEach(el => {
+    observer.observe(el);
+});
+
+// Counter animation for stats
+const animateCounters = () => {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.textContent.replace(/\D/g, ''));
+        const increment = target / 100;
+        let current = 0;
+        
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                if (counter.textContent.includes('+')) {
+                    counter.textContent = Math.ceil(current) + '+';
+                } else if (counter.textContent.includes('%')) {
+                    counter.textContent = Math.ceil(current) + '%';
+                } else {
+                    counter.textContent = Math.ceil(current);
+                }
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = counter.textContent; // Reset to original
+            }
+        };
+        
+        updateCounter();
+    });
+};
+
+// Trigger counter animation when stats section is visible
+const statsSection = document.querySelector('.stats');
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounters();
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+if (statsSection) {
+    statsObserver.observe(statsSection);
+}
+
+// Form handling
+const form = document.getElementById('coaching-form');
+if (form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Basic form validation
+        const requiredFields = form.querySelectorAll('[required]');
+        let isValid = true;
+        
+        // Remove previous error messages
+        document.querySelectorAll('.error-message').forEach(msg => msg.remove());
+        document.querySelectorAll('.error').forEach(field => field.classList.remove('error'));
+        
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                isValid = false;
+                field.classList.add('error');
+                
+                const errorMsg = document.createElement('div');
+                errorMsg.className = 'error-message';
+                errorMsg.textContent = 'Ovo polje je obavezno';
+                field.parentNode.appendChild(errorMsg);
+            }
+        });
+        
+        // Email validation
+        const emailField = document.getElementById('email');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailField.value && !emailRegex.test(emailField.value)) {
+            isValid = false;
+            emailField.classList.add('error');
+            
+            const errorMsg = document.createElement('div');
+            errorMsg.className = 'error-message';
+            errorMsg.textContent = 'Unesite validnu email adresu';
+            emailField.parentNode.appendChild(errorMsg);
+        }
+        
+        if (isValid) {
+            // Show success message
+            const successMsg = document.createElement('div');
+            successMsg.className = 'success-message';
+            successMsg.textContent = 'Hvala vam! Vaša prijava je uspešno poslata. Kontaktiraću vas u roku od 24 sata.';
+            
+            form.insertBefore(successMsg, form.firstChild);
+            
+            // Reset form
+            form.reset();
+            
+            // Remove success message after 5 seconds
+            setTimeout(() => {
+                successMsg.remove();
+            }, 5000);
+            
+            // Scroll to success message
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    });
+}
+
+
+
+// Add loading class to body when page loads
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
+
+// Lazy loading for images
+const images = document.querySelectorAll('img[data-src]');
+const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+        }
+    });
+});
+
+images.forEach(img => imageObserver.observe(img));
+
+// Add hover effects to cards
+document.querySelectorAll('.transformation-card, .mentorship-card, .pricing-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// Pricing card selection
+document.querySelectorAll('.pricing-card .btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Get the package name from the card
+        const card = this.closest('.pricing-card');
+        const packageName = card.querySelector('h3').textContent;
+        
+        // Set the package in the contact form
+        const packageSelect = document.getElementById('package');
+        if (packageSelect) {
+            const options = packageSelect.options;
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].text.includes(packageName)) {
+                    packageSelect.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+        
+        // Scroll to contact form
+        document.getElementById('contact').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+        
+        // Focus on the first input field
+        setTimeout(() => {
+            document.getElementById('name').focus();
+        }, 1000);
+    });
+});
+
+// Add typing effect to hero title
+const heroTitle = document.querySelector('.hero-title');
+if (heroTitle) {
+    const text = heroTitle.textContent;
+    heroTitle.textContent = '';
+    
+    let i = 0;
+    const typeWriter = () => {
+        if (i < text.length) {
+            heroTitle.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
+        }
+    };
+    
+    // Start typing effect after a short delay
+    setTimeout(typeWriter, 1000);
+}
+
+// Add floating animation to hero image
+const heroImage = document.querySelector('.hero-image img');
+if (heroImage) {
+    setInterval(() => {
+        heroImage.style.transform += ' translateY(10px)';
+        setTimeout(() => {
+            heroImage.style.transform = heroImage.style.transform.replace(' translateY(10px)', '');
+        }, 2000);
+    }, 4000);
+}
+
+    </script>
+</body>
+</html>
+
+
