@@ -107,9 +107,7 @@ if (statsSection) {
 // Form handling
 const form = document.getElementById('coaching-form');
 if (form) {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
+    form.addEventListener("submit", function(e) {
         // Basic form validation
         const requiredFields = form.querySelectorAll('[required]');
         let isValid = true;
