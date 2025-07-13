@@ -91,7 +91,7 @@ body {
 
 .hero-content {
     text-align: center;
-    color: white;
+    color: black;
     z-index: 2;
     position: relative;
     max-width: 800px;
