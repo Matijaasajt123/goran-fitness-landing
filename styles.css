@@ -82,7 +82,8 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     align-items: center;
-    padding-top: 70px; /* Adjust for fixed navbar */
+    justify-content: center;
+    padding-top: 70px;
     position: relative;
     overflow: hidden;
 }
@@ -90,8 +91,10 @@ body {
 .hero-content {
     text-align: center;
     color: white;
-    z-index: 1;
+    z-index: 2;
     position: relative;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero-title {
@@ -105,25 +108,6 @@ body {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     font-weight: 300;
-}
-
-.hero-buttons .btn {
-    margin: 0 10px;
-}
-
-.hero-image {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 50%;
-    max-width: 600px;
-    z-index: 0;
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    display: block;
 }
 
 /* General Section Styling */
