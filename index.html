@@ -320,7 +320,39 @@
             </div>
         </div>
     </section>
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Sprečava slanje forme na tradicionalan način
 
+    const form = e.target;
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => data[key] = value);
+
+    // 🚨 Ovde unesi svoj stvarni webhook URL (npr. Zapier, Make, ManyChat itd.)
+    const webhookURL = "https://hook.eu2.make.com/bdjw411nhhm1mqa951tpmq7yjh7l5y8e";
+
+    fetch(webhookURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => {
+      if (res.ok) {
+        alert("Prijava je uspešno poslata!");
+        form.reset(); // reset forma nakon slanja
+      } else {
+        alert("Došlo je do greške. Pokušajte ponovo.");
+      }
+    })
+    .catch(err => {
+      console.error("Greška:", err);
+      alert("Greška prilikom slanja.");
+    });
+  });
+</script>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
