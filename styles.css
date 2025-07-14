@@ -200,9 +200,12 @@ body {
 /* Transformations Section */
 .transformations-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* Podrazumevano jedna kolona za mobilne uređaje */
     gap: 30px;
     margin-top: 40px;
+    max-width: 1200px; /* Ograničava maksimalnu širinu cele mreže */
+    margin-left: auto;  /* Centira mrežu na stranici */
+    margin-right: auto; /* Centira mrežu na stranici */
 }
 
 .transformation-card {
@@ -211,17 +214,20 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     overflow: hidden;
     text-align: left;
+    display: flex; /* Koristimo flexbox za bolju strukturu kartice */
+    flex-direction: column;
 }
 
 .transformation-card img {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
+    height: 300px; /* Fiksna visina slike */
+    object-fit: cover; /* Osigurava da slika pokrije prostor bez deformacije */
     display: block;
 }
 
 .transformation-card-content {
     padding: 25px;
+    flex-grow: 1; /* Omogućava da ovaj deo raste i popuni prostor */
 }
 
 .transformation-card-content h3 {
@@ -235,6 +241,21 @@ body {
     color: #666;
     line-height: 1.6;
 }
+
+/* Media query za tablete - 2 kolone */
+@media (min-width: 600px) {
+    .transformations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media query za desktop - 3 kolone */
+@media (min-width: 992px) {
+    .transformations-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 
 /* How It Works Section */
 .how-it-works-grid {
