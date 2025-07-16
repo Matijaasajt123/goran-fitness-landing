@@ -79,7 +79,7 @@ body {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, #D4C2AD 0%, #CBB8A0 100%);
+    background: url('hero-slika.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,7 +91,7 @@ body {
 
 .hero-content {
     text-align: center;
-    color: black;
+    color: white;
     z-index: 2;
     position: relative;
     max-width: 800px;
@@ -844,5 +844,8 @@ html {
 
 /* Ensure images are copied to the root for GitHub Pages */
 /* This is a comment for the agent, not actual CSS */
+
+
+
 
 
