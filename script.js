@@ -130,7 +130,10 @@ if (form) {
         
         // Email validation
         const emailField = document.getElementById('email');
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailRegex = /^[^
+]+@[^
+]+\.[^
+]+$/;
         if (emailField.value && !emailRegex.test(emailField.value)) {
             isValid = false;
             emailField.classList.add('error');
@@ -249,14 +252,5 @@ if (heroTitle) {
     setTimeout(typeWriter, 1000);
 }
 
-// Add floating animation to hero image
-const heroImage = document.querySelector('.hero-image img');
-if (heroImage) {
-    setInterval(() => {
-        heroImage.style.transform += ' translateY(10px)';
-        setTimeout(() => {
-            heroImage.style.transform = heroImage.style.transform.replace(' translateY(10px)', '');
-        }, 2000);
-    }, 4000);
-}
+
 
