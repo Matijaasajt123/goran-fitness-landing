@@ -847,17 +847,23 @@ html {
   .nav-menu {
     display: none;
     flex-direction: column;
+    position: fixed;       /* fiksiran na ekranu */
+    top: 0;
+    right: 0;
+    height: 100vh;         /* cela visina ekrana */
+    width: 250px;          /* širina panela */
     background-color: white;
-    padding: 1rem;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    z-index: 100;
+    padding: 2rem 1rem;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+    border-radius: 0 0 0 10px;
+    overflow-y: auto;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);  /* sakriven van ekrana desno */
   }
 
   .nav-menu.active {
+    transform: translateX(0);     /* prikazan */
     display: flex;
   }
 
@@ -866,6 +872,7 @@ html {
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    z-index: 10000;   /* iznad menija */
   }
 
   .hamburger span {
@@ -875,7 +882,7 @@ html {
   }
 }
 
-/* Na većim ekranima sakrij hamburger dugme */
+/* Desktop verzija - hamburger se ne prikazuje */
 .hamburger {
   display: none;
 }
@@ -884,13 +891,7 @@ html {
   .hamburger {
     display: flex;
   }
-
-  .nav-menu {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
-
 /* Ensure images are copied to the root for GitHub Pages */
 /* This is a comment for the agent, not actual CSS */
 
