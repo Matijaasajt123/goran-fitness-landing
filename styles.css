@@ -841,6 +841,55 @@ html {
 .pricing-card .features li i {
     margin-right: 10px;
 }
+/* === HAMBURGER MENI ZA TELEFON === */
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    padding: 1rem;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+  }
+}
+
+/* Na većim ekranima sakrij hamburger dugme */
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 
 /* Ensure images are copied to the root for GitHub Pages */
 /* This is a comment for the agent, not actual CSS */
